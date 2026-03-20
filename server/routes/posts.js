@@ -5,7 +5,9 @@ import path from 'path';
 import auth from "../middleware/auth.js"
 
 const storage = multer.diskStorage({
-  destination: 'uploads/',
+  destination: (req, file, cb) => {
+    cb(null, '/home/admin/PIPERAS-BLOG/server/uploads');
+  },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname);
   }
