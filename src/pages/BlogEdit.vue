@@ -106,7 +106,7 @@ const updatePost = async () => {
       <label>当前封面</label>
 
       <div v-if="oldCover" class="cover-preview">
-        <img :src="'http://localhost:5000' + oldCover" />
+        <img :src="'http://8.130.212.252' + oldCover" />
       </div>
 
       <label>上传新封面（可选）</label>

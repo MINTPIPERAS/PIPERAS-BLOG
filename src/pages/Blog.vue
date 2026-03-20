@@ -122,7 +122,7 @@ const scrollToBottom = () => {
 
         <div class="post-card" v-for="post in posts" :key="post._id">
 
-          <img v-if="post.cover" :src="'http://localhost:5000' + post.cover" class="cover" />
+          <img v-if="post.cover" :src="'http://8.130.212.252' + post.cover" class="cover" />
 
           <div class="post-content">
 

@@ -6,7 +6,7 @@ import auth from "../middleware/auth.js"
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '/home/admin/PIPERAS-BLOG/server/uploads');
+    cb(null, '/var/www/uploads'); // 服务器上的绝对路径，确保这个目录存在并且有写权限
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname);
