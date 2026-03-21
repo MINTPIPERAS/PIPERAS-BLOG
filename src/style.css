@@ -95,5 +95,25 @@ html, body, #app {
   background: transparent;
 }
 
+/* 移动端统一防溢出：避免 width:100% + padding 导致卡片出框 */
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #app {
+    overflow-x: hidden;
+  }
+
+  #app {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 
 
