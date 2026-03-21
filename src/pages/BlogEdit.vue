@@ -183,4 +183,160 @@ label {
 .ql-editor img {
   max-width: 100%;
 }
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+
+  label {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .cover-preview img {
+    width: 150px;
+    margin: 8px 0;
+  }
+
+  .editor {
+    height: 280px;
+    margin-top: 8px;
+  }
+
+  .ql-editor {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .save-btn {
+    margin-top: 16px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin: 0 0 16px 0;
+  }
+
+  .input {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    margin: 6px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  label {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  input[type="file"] {
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .cover-preview img {
+    width: 120px;
+    margin: 8px 0;
+  }
+
+  .editor {
+    height: 240px;
+    margin-top: 6px;
+  }
+
+  .ql-editor {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .ql-toolbar {
+    padding: 4px;
+  }
+
+  .save-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .input {
+    padding: 6px;
+    font-size: 12px;
+    margin: 4px 0;
+  }
+
+  label {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  input[type="file"] {
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  .cover-preview img {
+    width: 100px;
+    margin: 6px 0;
+  }
+
+  .editor {
+    height: 200px;
+  }
+
+  .ql-editor {
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  .ql-toolbar {
+    padding: 3px;
+  }
+
+  .ql-toolbar.ql-snow {
+    border: 1px solid #ccc;
+  }
+
+  .save-btn {
+    margin-top: 10px;
+    padding: 6px;
+    font-size: 12px;
+  }
+}
 </style>

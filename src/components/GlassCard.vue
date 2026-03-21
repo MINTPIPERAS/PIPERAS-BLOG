@@ -24,4 +24,19 @@
     0 1px 2px rgba(0, 0, 0, 0.1);
 
 }
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .glass-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+}
 </style>

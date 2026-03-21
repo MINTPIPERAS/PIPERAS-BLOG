@@ -37,6 +37,24 @@ const name = 'PIPERAS'
 
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
 
+  font-size: 14px;
+  text-align: center;
+
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .footer {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
 }
 
 .footer-content {

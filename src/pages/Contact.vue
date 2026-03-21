@@ -28,6 +28,7 @@ import GlassCard from '../components/GlassCard.vue';
   max-width: 700px;
   margin: auto;
   padding: 20px;
+  width: 100%;
 }
 
 .header {
@@ -41,10 +42,12 @@ import GlassCard from '../components/GlassCard.vue';
 
 .header h1 {
   margin: 0;
+  font-size: 28px;
 }
 
 .intro-card {
   padding: 20px;
+  font-size: 14px;
 }
 
 .intro-card h2 {
@@ -55,11 +58,13 @@ import GlassCard from '../components/GlassCard.vue';
 .intro-card p {
   line-height: 1.6;
   color: #555;
+  margin-bottom: 10px;
 }
 
 .intro-card ul {
   list-style-type: none;
   padding: 0;
+  margin: 10px 0 0 0;
 }
 
 .intro-card li {
@@ -73,5 +78,77 @@ import GlassCard from '../components/GlassCard.vue';
 
 .intro-card a:hover {
   text-decoration: underline;
+}
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .intro-card {
+    padding: 16px;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .intro-card {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .intro-card p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .intro-card li {
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .intro-card {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .intro-card p {
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+
+  .intro-card li {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
 }
 </style>

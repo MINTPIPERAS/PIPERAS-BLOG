@@ -123,6 +123,8 @@ const scrollToBottom = () => {
         <div class="post-card" v-for="post in posts" :key="post._id">
 
           <img v-if="post.cover" :src="'http://8.130.212.252' + post.cover" class="cover" />
+          <!-- src里面的URL需要替换成你服务器的地址，确保能正确加载封面图片
+          其他页面同样需要替换URL地址，记得全局搜索一下"http://localhost:5000"并替换成你的服务器地址 -->
 
           <div class="post-content">
 
@@ -320,5 +322,187 @@ const scrollToBottom = () => {
 .pagination button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    padding: 16px;
+  }
+
+  .post-list {
+    gap: 20px;
+  }
+
+  .cover {
+    max-height: 250px;
+  }
+
+  .post-content {
+    padding: 16px;
+  }
+
+  .pagination {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pagination span {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .create-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .post-list {
+    gap: 16px;
+  }
+
+  .cover {
+    max-height: 200px;
+  }
+
+  .post-content {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .meta {
+    font-size: 12px;
+  }
+
+  .summary {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .read-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .pagination {
+    gap: 8px;
+    margin-top: 30px;
+    flex-direction: column;
+  }
+
+  .pagination button {
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .page-jump {
+    width: 100%;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .page-jump input {
+    width: 50px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .page-jump button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .pagination span {
+    font-size: 11px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .create-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .post-list {
+    gap: 12px;
+  }
+
+  .cover {
+    max-height: 150px;
+  }
+
+  .post-content {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .meta {
+    font-size: 11px;
+  }
+
+  .summary {
+    font-size: 13px;
+  }
+
+  .read-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .pagination button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .page-jump input {
+    width: 40px;
+    padding: 3px 4px;
+    font-size: 11px;
+  }
+
+  .page-jump span {
+    font-size: 11px;
+  }
+
+  .pagination span {
+    font-size: 10px;
+  }
 }
 </style>

@@ -457,4 +457,223 @@ const loadComments = async () => {
 .code-header button:hover {
   opacity: 0.8;
 }
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .content {
+    font-size: 16px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+
+  .detail-cover {
+    max-height: 300px;
+  }
+
+  .comment-modal {
+    left: auto;
+    right: 0;
+    width: 280px;
+    max-height: 60vh;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin: 16px 0 12px 0;
+  }
+
+  .meta {
+    font-size: 12px;
+    margin: 12px 0;
+  }
+
+  .content {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+  }
+
+  .detail-cover {
+    max-height: 240px;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    margin: 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .back-btn,
+  .edit-btn,
+  .delete-btn,
+  .comment-btn {
+    margin-right: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .comment-modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 16px 16px 0 0;
+    border: none;
+    padding: 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .comment-form input,
+  .comment-form textarea {
+    padding: 8px;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  .comment-item {
+    padding: 10px 0;
+  }
+
+  .content pre {
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 12px;
+    max-height: 300px;
+  }
+
+  .content ul,
+  .content ol {
+    padding-left: 1.2em;
+    margin: 8px 0;
+  }
+
+  .content li {
+    margin: 4px 0;
+  }
+
+  .code-wrapper {
+    margin: 12px 0;
+  }
+
+  .code-header {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .code-header button {
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin: 12px 0 10px 0;
+  }
+
+  .meta {
+    font-size: 11px;
+  }
+
+  .content {
+    font-size: 13px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .detail-cover {
+    max-height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .actions {
+    margin: 12px 0;
+    gap: 6px;
+  }
+
+  .back-btn,
+  .edit-btn,
+  .delete-btn,
+  .comment-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+    min-width: auto;
+  }
+
+  .comment-modal {
+    padding: 12px;
+  }
+
+  .comment-header h2 {
+    font-size: 16px;
+  }
+
+  .comment-form input,
+  .comment-form textarea {
+    padding: 6px;
+    font-size: 12px;
+    margin: 6px 0;
+  }
+
+  .comment-form button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .content pre {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 11px;
+    max-height: 250px;
+  }
+
+  .content ul,
+  .content ol {
+    padding-left: 1em;
+    margin: 6px 0;
+  }
+
+  .content li {
+    margin: 3px 0;
+  }
+
+  .code-header {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .code-header button {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+}
 </style>

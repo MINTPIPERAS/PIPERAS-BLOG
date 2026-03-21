@@ -33,9 +33,9 @@ const projects = ref([
 <style>
 .container {
   max-width: 900px;
-  min-width: 500px;
   margin: auto;
   padding: 20px;
+  width: 100%;
 }
 
 .header {
@@ -78,5 +78,75 @@ const projects = ref([
   color: #444;
   line-height: 1.6;
   font-size: 14px;
+}
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    padding: 16px;
+  }
+
+  .project-list {
+    gap: 16px;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .project-list {
+    gap: 12px;
+  }
+
+  .project-content {
+    padding: 16px;
+  }
+
+  .project-content .title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .project-content .desc {
+    font-size: 13px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .project-list {
+    gap: 10px;
+  }
+
+  .project-content {
+    padding: 12px;
+  }
+
+  .project-content .title {
+    font-size: 16px;
+  }
+
+  .project-content .desc {
+    font-size: 12px;
+  }
 }
 </style>

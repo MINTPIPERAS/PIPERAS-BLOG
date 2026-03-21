@@ -195,4 +195,157 @@ th, td {
 .back-admin-btn:hover {
   background: #ececec;
 }
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .admin {
+    padding: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .back-admin-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  /* 在移动端隐藏"所属文章"列 */
+  th:nth-child(3),
+  td:nth-child(3) {
+    display: none;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none;
+  }
+
+  .delete-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .empty {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .pagination {
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .page-jump {
+    gap: 4px;
+  }
+
+  .page-jump input {
+    width: 50px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .pagination span {
+    font-size: 11px;
+    flex-basis: 100%;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .admin {
+    padding: 10px;
+  }
+
+  .header {
+    gap: 8px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .back-admin-btn {
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none;
+  }
+
+  .delete-btn {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+
+  .pagination {
+    gap: 4px;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .pagination button {
+    padding: 6px 8px;
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .page-jump {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2px;
+  }
+
+  .page-jump input {
+    width: 35px;
+    padding: 3px;
+    font-size: 10px;
+  }
+
+  .page-jump span {
+    font-size: 10px;
+  }
+
+  .pagination span {
+    font-size: 9px;
+    width: 100%;
+  }
+}
 </style>

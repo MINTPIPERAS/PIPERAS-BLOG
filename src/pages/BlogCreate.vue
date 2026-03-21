@@ -178,4 +178,165 @@ textarea {
 .ql-editor img {
   max-width: 100%;
 }
+
+/* 平板设备优化 */
+@media (max-width: 900px) {
+  .container {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  input,
+  textarea {
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .editor {
+    height: 280px;
+    margin-top: 8px;
+  }
+
+  .publish {
+    margin-top: 16px;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* 移动设备优化 */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .back-admin-btn {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+
+  input[type="file"] {
+    font-size: 12px;
+  }
+
+  input,
+  textarea {
+    margin: 6px 0;
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+
+  .form {
+    gap: 4px;
+  }
+
+  .editor {
+    height: 240px;
+    margin-top: 6px;
+  }
+
+  .ql-editor {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .publish {
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    margin-top: 12px;
+  }
+
+  .header {
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .back-admin-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  input,
+  textarea {
+    margin: 4px 0;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .editor {
+    height: 200px;
+  }
+
+  .ql-editor {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .ql-toolbar {
+    padding: 4px;
+  }
+
+  .ql-toolbar.ql-snow {
+    border: 1px solid #ccc;
+  }
+
+  .publish {
+    margin-top: 10px;
+    padding: 6px;
+    font-size: 12px;
+  }
+}
 </style>
