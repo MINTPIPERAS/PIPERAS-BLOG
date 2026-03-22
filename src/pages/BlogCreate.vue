@@ -13,6 +13,12 @@ const title = ref('');
 const author = ref('');
 const content = ref('');
 const coverUrl = ref('');
+const assetBaseUrl = (import.meta.env.VITE_ASSET_BASE_URL ?? '').replace(/\/$/, '');
+
+const buildAssetUrl = (url) => {
+  if (!url) return '';
+  return `${assetBaseUrl}${url}`;
+};
 
 const submitPost = async () => {
   if (!title.value || !content.value) {
@@ -44,11 +50,17 @@ const uploadCover = async (event) => {
   const form = new FormData();
   form.append('cover', file);
 
-  const res = await api.post('/posts/upload', form, {
-    headers: { 'Content-Type': 'multipart/form-data' }
-  });
+  try {
+    const res = await api.post('/posts/upload', form, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    });
 
-  coverUrl.value = res.data.url;
+    coverUrl.value = res.data.url;
+  } catch (err) {
+    console.error('封面上传失败:', err);
+    const message = err?.response?.data?.error || err?.response?.data?.message || '封面上传失败';
+    alert(message);
+  }
 };
 
 </script>
@@ -66,7 +78,7 @@ const uploadCover = async (event) => {
     <input type="file" @change="uploadCover" />
 
     <div v-if="coverUrl">
-      <img :src="'http://8.163.81.251' + coverUrl" style="width:200px;margin-top:10px;" />
+      <img :src="buildAssetUrl(coverUrl)" style="width:200px;margin-top:10px;" />
     </div>
 
     <div class="form">

@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import path from 'path';
 import postsRouter from './routes/posts.js';
 import commentRoutes from "./routes/comments.js"
 import User from "./models/User.js"
@@ -12,6 +13,9 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const uploadDir = process.env.UPLOAD_DIR
+  ? path.resolve(process.env.UPLOAD_DIR)
+  : path.resolve(process.cwd(), 'uploads');
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -45,7 +49,7 @@ app.use("/api",authRoutes)
 app.use("/api/comments",commentRoutes)
 
 // 静态文件服务（上传的图片）
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(uploadDir));
 
 // 挂载文章路由
 app.use('/api/posts', postsRouter);
