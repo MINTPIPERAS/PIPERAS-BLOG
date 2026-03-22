@@ -16,14 +16,8 @@ const author = ref('')
 const content = ref('')
 const oldCover = ref('')
 const newCover = ref(null)
-const assetBaseUrl = (import.meta.env.VITE_ASSET_BASE_URL ?? '').replace(/\/$/, '')
 
 const loading = ref(true)
-
-const buildAssetUrl = (url) => {
-  if (!url) return ''
-  return `${assetBaseUrl}${url}`
-}
 
 const modules = {
   syntax: {
@@ -81,8 +75,7 @@ const updatePost = async () => {
   } catch (err) {
 
     console.error(err)
-    const message = err?.response?.data?.error || err?.response?.data?.message || '更新失败'
-    alert(message)
+    alert('更新失败')
 
   }
 
@@ -113,7 +106,7 @@ const updatePost = async () => {
       <label>当前封面</label>
 
       <div v-if="oldCover" class="cover-preview">
-        <img :src="buildAssetUrl(oldCover)" />
+        <img :src="'http://8.163.81.251' + oldCover" />
       </div>
 
       <label>上传新封面（可选）</label>

@@ -2,20 +2,11 @@ import express from 'express';
 import Post from '../models/Post.js';
 import multer from 'multer';
 import path from 'path';
-import fs from 'fs';
 import auth from "../middleware/auth.js"
-
-const uploadDir = process.env.UPLOAD_DIR
-  ? path.resolve(process.env.UPLOAD_DIR)
-  : '/var/www/uploads';
-
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, uploadDir);
+    cb(null, '/var/www/uploads'); // 服务器上的绝对路径，确保这个目录存在并且有写权限
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname);
@@ -41,6 +32,8 @@ const router = express.Router();
 //     res.status(500).json({ error: '删除文章失败' });
 //   }
 // });
+import fs from 'fs';
+
 router.delete('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findByIdAndDelete(req.params.id);
@@ -50,8 +43,8 @@ router.delete('/:id', auth, async (req, res) => {
     }
 
     // 删除封面图片（如果有）
-    if (post.cover && post.cover.startsWith('/uploads/')) {
-      const filePath = path.join(uploadDir, path.basename(post.cover));
+    if (post.cover) {
+      const filePath = '.' + post.cover; // 例如 /uploads/... 变成 ./uploads/...
       fs.unlink(filePath, (err) => {
         if (err) console.log('封面删除失败:', err);
       });
@@ -108,10 +101,6 @@ router.get('/', async (req, res) => {
 
 // 改为分两步： 先上传封面图 再创建文章  封面图片上传成功 再将图片url保存到数据库
 router.post('/upload', auth, upload.single('cover'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: '未接收到文件' });
-  }
-
   res.json({
     url: '/uploads/' + req.file.filename
   });
@@ -202,7 +191,7 @@ router.put('/:id', auth, upload.single('cover'), async (req, res) => {
     res.json({ message: '更新成功', post: updatedPost });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: '更新失败', error: err.message });
+    res.status(500).json({ message: '更新失败' });
   }
 });
 
