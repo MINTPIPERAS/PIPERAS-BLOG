@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const uploadDir = process.env.UPLOAD_DIR
   ? path.resolve(process.env.UPLOAD_DIR)
-  : path.resolve(process.cwd(), 'uploads');
+  : '/var/www/uploads';
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
