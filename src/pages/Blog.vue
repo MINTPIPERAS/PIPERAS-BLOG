@@ -122,7 +122,7 @@ const scrollToBottom = () => {
 
         <div class="post-card" v-for="post in posts" :key="post._id">
 
-          <img v-if="post.cover" :src="'http://8.130.212.252' + post.cover" class="cover" />
+          <img v-if="post.cover" :src="'http://8.163.81.251' + post.cover" class="cover" />
           <!-- src里面的URL需要替换成你服务器的地址，确保能正确加载封面图片
           其他页面同样需要替换URL地址，记得全局搜索一下"http://localhost:5000"并替换成你的服务器地址 -->
 

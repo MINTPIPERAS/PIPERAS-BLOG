@@ -12,6 +12,7 @@
       <ul>
         <li>Email: 37220232203794@xmu.edu.cn</li>
         <li>Gmail: cangzhiyue9@gmail.com</li>
+        <li>Qmail: 1498205907@qq.com</li>
         <li>GitHub: <a href="https://github.com/MINTPIPERAS" target="_blank">MINTPIPERAS</a></li>
         <li>Bilibili: <a href="https://space.bilibili.com/1169823633" target="_blank">番茄味Yes番茄No</a></li>
       </ul>
