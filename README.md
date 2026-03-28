@@ -9,3 +9,8 @@
 两者通过HTTP接口连接
 
 简单好上手 适合新人搭建
+
+## 文档导航
+
+- 网络请求运行说明（新手向）：[docs/NETWORK_REQUESTS.md](docs/NETWORK_REQUESTS.md)
+- 请求排错速查表（401/404/500）：[docs/REQUEST_TROUBLESHOOTING.md](docs/REQUEST_TROUBLESHOOTING.md)
