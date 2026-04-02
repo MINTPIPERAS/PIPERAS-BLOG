@@ -47,6 +47,8 @@ const router = createRouter({
 
 // })
 
+
+// 管理员路由守卫
 router.beforeEach((to,from,next)=>{
 
 const token = localStorage.getItem("token")

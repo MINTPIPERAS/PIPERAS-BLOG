@@ -196,7 +196,7 @@ const loadComments = async () => {
       <div v-else>
         <h1>{{ post.title }}</h1>
 
-        <img v-if="post.cover" :src="'http://8.163.81.251' + post.cover" class="detail-cover" />
+        <img v-if="post.cover" :src="post.cover" class="detail-cover" />
 
         <div class="content" v-html="post.content"></div>
 

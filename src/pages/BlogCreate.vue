@@ -66,7 +66,7 @@ const uploadCover = async (event) => {
     <input type="file" @change="uploadCover" />
 
     <div v-if="coverUrl">
-      <img :src="'http://8.163.81.251' + coverUrl" style="width:200px;margin-top:10px;" />
+      <img :src="coverUrl" style="width:200px;margin-top:10px;" />
     </div>
 
     <div class="form">
