@@ -19,7 +19,7 @@ app.use(express.json());
 
 async function createAdmin(){
 
-  const exists = await User.findOne({username:"admin"})
+  const exists = await User.findOne({username:"PIPERAS"})
 
   if(!exists){
 
