@@ -25,7 +25,7 @@ import GlassCard from '../components/GlassCard.vue';
 
 const projects = ref([
   { id: 1, name: '个人网站', desc: '基于 Vue + Vite 的个人站点', url: '/' },
-  { id: 2, name: '课程设计', desc: '课程相关项目与作业', url: 'https://github.com/MINTPIPERAS' },
+  { id: 2, name: '项目仓库', desc: '正经项目 | 课程设计 | 随便搞搞', url: 'https://github.com/MINTPIPERAS' },
   { id: 3, name: '业余分享', desc: 'Bilibili碎碎念', url: 'https://space.bilibili.com/1169823633?spm_id_from=333.1007.0.0' }
 ])
 </script>
